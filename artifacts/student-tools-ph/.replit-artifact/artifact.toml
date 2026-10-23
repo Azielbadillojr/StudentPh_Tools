@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Student Tools PH"
+description = "A mobile-friendly Filipino student toolkit with grade and GWA calculators, a study timer, a study planner, theme switching, and a privacy policy."
+version = "1.0.0"
+id = "artifacts/student-tools-ph"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 23159
+
+[services.development]
+run = "pnpm --filter @workspace/student-tools-ph run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/student-tools-ph", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/student-tools-ph/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "23159"
+BASE_PATH = "/"

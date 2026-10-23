@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+    <title>Student Tools PH</title>
+    <meta name="description" content="A private study toolkit for Filipino students. Calculate grades, plan study time, and stay focused — no account needed." />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="Student Tools PH" />
+    <meta property="og:description" content="Calculate grades, plan study time, and stay focused. Your work stays on your device." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Student Tools PH" />
+    <meta name="twitter:description" content="Calculate grades, plan study time, and stay focused. Your work stays on your device." />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/app.css" />
+    <link rel="stylesheet" href="/desktop-layout.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="Student Tools PH home"><span class="brand-mark" aria-hidden="true">S</span><span>student tools<span class="brand-ph">PH</span></span></a>
+        <nav class="top-nav" aria-label="Main navigation">
+          <a href="#grade-calculator">Grade calculator</a><a href="#gwa-calculator">GWA</a><a href="#study-timer">Focus timer</a><a href="#study-planner">Planner</a>
+        </nav>
+        <div class="top-actions"><a class="privacy-link" href="/privacy.html">Privacy</a><button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch to dark theme" title="Switch theme"><span class="theme-icon" aria-hidden="true">◐</span><span class="theme-label">Light</span></button></div>
+      </header>
+      <main>
+        <section class="hero" aria-labelledby="hero-heading">
+          <div class="hero-copy">
+            <p class="eyebrow"><span class="eyebrow-dot"></span> YOUR STUDY SPACE, RIGHT HERE</p>
+            <h1 id="hero-heading">School gets busy.<br><span>Let’s make it simpler.</span></h1>
+            <p class="hero-description">Four practical tools for the school day — no account, no fuss. Just a little more clarity for what’s next.</p>
+            <a class="hero-cta" href="#grade-calculator">Explore your tools <span aria-hidden="true">↓</span></a>
+          </div>
+          <aside class="hero-note" aria-label="Privacy reminder">
+            <span class="note-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.6 2.9 8.1 7 10 4.1-1.9 7-5.4 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+            <div><strong>Your work stays yours.</strong><p>Calculations and planner entries stay in this browser on your device.</p></div>
+            <a href="/privacy.html" aria-label="Read our privacy policy">Read our privacy note <span aria-hidden="true">↗</span></a>
+          </aside>
+          <div class="hero-art" aria-hidden="true"><div class="art-circle art-circle-one"></div><div class="art-circle art-circle-two"></div><div class="art-lines"></div><div class="art-card"><span class="art-check">✓</span><span>One step at a time</span><span class="art-mini">STUDY SESSION · 25 MIN</span></div><div class="art-sticker">Small<br>steps<br><b>count.</b></div></div>
+        </section>
+        <section class="tools-intro"><div><p class="eyebrow">YOUR EVERYDAY TOOLKIT</p><h2>Pick what you need today.</h2></div><p>No sign-in. No distractions. Just the essentials, ready when you are.</p></section>
+        <section class="tools-grid" aria-label="Study tools">
+          <article class="tool-card grade-card" id="grade-calculator">
+            <div class="card-heading"><span class="tool-number">01</span><span class="tool-icon grade-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M8 7h8M8 11h2m4 0h2m-8 4h2m4 0h2"/></svg></span><span class="card-tag">QUICK CHECK</span></div>
+            <h3>Grade calculator</h3><p class="card-description">Find your weighted score from quizzes, projects, and exams.</p>
+            <div id="grade-rows" class="input-rows" aria-label="Grade items"></div>
+            <button id="add-grade-row" class="text-button" type="button"><span aria-hidden="true">＋</span> Add grade item</button>
+            <div class="grade-result result-panel" aria-live="polite"><div><span class="result-label">WEIGHTED GRADE</span><strong id="grade-result">—</strong></div><p id="grade-hint">Add your scores and their weights to get started.</p></div>
+            <button id="calculate-grade" class="primary-button" type="button">Calculate grade <span aria-hidden="true">→</span></button>
+          </article>
+          <article class="tool-card gwa-card" id="gwa-calculator">
+            <div class="card-heading"><span class="tool-number">02</span><span class="tool-icon gwa-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19V5m0 14h16"/><path d="m7 15 4-4 3 2 5-7"/></svg></span><span class="card-tag">UNIVERSITY GWA</span></div>
+            <h3>GWA calculator</h3><p class="card-description">Get your weighted average using grade values and units.</p>
+            <div id="gwa-rows" class="input-rows" aria-label="Subjects and units"></div>
+            <button id="add-gwa-row" class="text-button" type="button"><span aria-hidden="true">＋</span> Add subject</button>
+            <div class="gwa-result result-panel" aria-live="polite"><div><span class="result-label">YOUR GWA</span><strong id="gwa-result">—</strong></div><p id="gwa-hint">Philippine convention: 1.0 is highest; 5.0 is lowest.</p></div>
+            <button id="calculate-gwa" class="primary-button" type="button">Calculate GWA <span aria-hidden="true">→</span></button>
+          </article>
+          <article class="tool-card timer-card" id="study-timer">
+            <div class="card-heading"><span class="tool-number">03</span><span class="tool-icon timer-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M9 2h6m-3 0v3"/></svg></span><span class="card-tag">FOCUS MODE</span></div>
+            <h3>Study timer</h3><p class="card-description">One focused session, then a well-earned breather.</p>
+            <div class="timer-presets" role="group" aria-label="Choose timer duration"><button type="button" class="preset-button is-selected" data-minutes="25" aria-pressed="true">25 min</button><button type="button" class="preset-button" data-minutes="45" aria-pressed="false">45 min</button><button type="button" class="preset-button" data-minutes="60" aria-pressed="false">60 min</button></div>
+            <div class="timer-face"><div class="timer-ring" id="timer-ring"><div class="timer-ring-inner"><span id="timer-display" role="timer" aria-live="off">25:00</span><small id="timer-status">READY WHEN YOU ARE</small></div></div></div>
+            <div class="timer-controls"><button id="timer-start" class="primary-button" type="button">Start focusing <span aria-hidden="true">→</span></button><button id="timer-reset" class="secondary-button" type="button">Reset</button></div>
+            <p id="timer-message" class="timer-message" aria-live="polite">Put your phone aside. You’ve got this.</p>
+          </article>
+          <article class="tool-card planner-card" id="study-planner">
+            <div class="card-heading"><span class="tool-number">04</span><span class="tool-icon planner-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M8 3v4m8-4v4M4 10h16m-11 4h2m3 0h2m-7 3h2"/></svg></span><span class="card-tag">YOUR NEXT STEPS</span></div>
+            <h3>Study planner</h3><p class="card-description">Get school tasks out of your head and into a simple plan.</p>
+            <form id="planner-form" class="planner-form" novalidate>
+              <label class="sr-only" for="task-title">What do you need to do?</label><input id="task-title" name="title" type="text" maxlength="90" placeholder="e.g. Review Biology chapter 4" required>
+              <div class="planner-fields"><div><label for="task-date">Due date <span>optional</span></label><input id="task-date" name="date" type="date"></div><div><label for="task-priority">Priority</label><select id="task-priority" name="priority"><option value="normal">Normal</option><option value="high">Important</option><option value="low">When there’s time</option></select></div></div>
+              <p id="planner-error" class="form-error" role="alert"></p><button class="primary-button" type="submit">Add to my plan <span aria-hidden="true">→</span></button>
+            </form>
+            <div class="planner-list-heading"><strong>Your plan</strong><span id="planner-count">0 tasks</span></div>
+            <div id="planner-list" class="planner-list" aria-live="polite"><div class="planner-empty"><span class="empty-mark" aria-hidden="true">＋</span><strong>A clear page is a good start.</strong><p>Add a task above and it’ll stay right here on this device.</p></div></div>
+          </article>
+        </section>
+        <section class="closing-note"><div class="closing-mark" aria-hidden="true">S</div><div><h2>A little progress adds up.</h2><p>Keep it simple. Take the next step. You’re doing better than you think.</p></div><a href="#hero-heading" class="back-top">Back to top <span aria-hidden="true">↑</span></a></section>
+      </main>
+      <footer class="site-footer"><a class="footer-brand" href="/">Student Tools <span>PH</span></a><p>Made for the everyday student. Nothing leaves your device.</p><a href="/privacy.html">Privacy policy</a><span class="footer-loc">For students in the Philippines</span></footer>
+    </div>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>
